@@ -14,6 +14,7 @@ namespace AbstractFactory
         public abstract void CommonSoldier(); //Рядовой
     }
 
+    //Армия Эльфов
     class ElfsArmy : Army
     {
         public override void Commandor()
@@ -32,6 +33,7 @@ namespace AbstractFactory
         }
     }
 
+    //Армия Орков
     class OrcsArmy : Army
     {
         public override void Commandor()
@@ -56,7 +58,7 @@ namespace AbstractFactory
         public abstract void ToStrike(); //Нанести удар
     }
 
-    class Bow : Weapon
+    class Bow : Weapon //Класс лук со стрелами
     {
         public override void ToStrike()
         {
@@ -64,7 +66,7 @@ namespace AbstractFactory
         }
     }
 
-    class Ax : Weapon
+    class Ax : Weapon //Класс топор
     {
         public override void ToStrike()
         {
@@ -79,6 +81,7 @@ namespace AbstractFactory
         public abstract Weapon CreateWeapon(); //Создаем оружие
     }
 
+    //Создание армии эльфов, которые стреляют из лука
     class Elfs : CharacterFactory
     {
         public override Army CreateArmy()
@@ -92,6 +95,7 @@ namespace AbstractFactory
         }
     }
 
+    //Создание армии окров, которые рубят топором
     class Orcs : CharacterFactory
     {
         public override Army CreateArmy()
@@ -105,7 +109,7 @@ namespace AbstractFactory
         }
     }
 
-    // Персонаж
+    //Создание персонажа
     class Character
     {
         private Weapon weapon;
